@@ -2,7 +2,5 @@ import React from "react";
 import "../styles/Hero.css";
 
 export default function Hero() {
-  return (
-    <div className="hero-image">{/* <img src="https://via.placeholder.com/250"></img> */}</div>
-  );
+  return <div className="hero-image"></div>;
 }
