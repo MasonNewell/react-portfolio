@@ -1,5 +1,6 @@
 import "./App.css";
 import Navigation from "./components/Nav";
+import Form from "./components/Form";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
 import About from "./pages/About";
