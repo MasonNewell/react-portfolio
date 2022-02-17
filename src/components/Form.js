@@ -3,9 +3,11 @@ import "../styles/Form.css";
 
 function ContactForm() {
   // Name, Email, Message
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [inputFields, setInputFields] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
 
   // Error
   const [errorMessage, setErrorMessage] = useState("");
@@ -13,13 +15,23 @@ function ContactForm() {
   // Form inputs
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    // console.log(e.target);
-    return name === "name" ? setName(value) : "email" ? setEmail(value) : setMessage(value);
+    // Copy old object, change a key value pair
+    const newInput = {
+      ...inputFields,
+      [name]: value,
+    };
+    setInputFields(newInput);
   };
 
-  // Form submit
+  //   Form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // Clear fields
+    setInputFields({
+      name: "",
+      email: "",
+      message: "",
+    });
   };
 
   return (
@@ -27,21 +39,21 @@ function ContactForm() {
       <h3>FORM</h3>
       <form className="form">
         <input
-          value={name}
+          value={inputFields.name}
           name="name"
           onChange={handleInputChange}
           type="text"
           placeholder="name"
         />
         <input
-          value={email}
+          value={inputFields.email}
           name="email"
           onChange={handleInputChange}
           type="email"
           placeholder="email"
         />
         <input
-          value={message}
+          value={inputFields.message}
           name="message"
           onChange={handleInputChange}
           type="text"
