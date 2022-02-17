@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Form.css";
+import { validateName, validateEmail, validateMessage } from "../utils/helpers";
 
 function ContactForm() {
   // Name, Email, Message
@@ -26,12 +27,27 @@ function ContactForm() {
   //   Form submit
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    // Validate fields
+    if (!validateName(inputFields.name)) {
+      setErrorMessage("Name required.");
+      return;
+    }
+    if (!validateEmail(inputFields.email)) {
+      setErrorMessage("Invalid email address.");
+      return;
+    }
+    if (!validateMessage(inputFields.message)) {
+      setErrorMessage("Message field required.");
+      return;
+    }
+
     // Clear fields
     setInputFields({
       name: "",
       email: "",
       message: "",
     });
+    setErrorMessage("");
   };
 
   return (
@@ -59,6 +75,9 @@ function ContactForm() {
           type="text"
           placeholder="message"
         />
+        <div>
+          <p>{errorMessage}</p>
+        </div>
         <button type="button" onClick={handleFormSubmit}>
           Submit
         </button>
