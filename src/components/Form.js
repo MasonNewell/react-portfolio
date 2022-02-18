@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Form.css";
+import { Form, Container } from "react-bootstrap";
 import { validateName, validateEmail, validateMessage } from "../utils/helpers";
 
 function ContactForm() {
@@ -52,36 +53,40 @@ function ContactForm() {
 
   return (
     <div>
-      <h3>FORM</h3>
-      <form className="form">
-        <input
-          value={inputFields.name}
-          name="name"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="name"
-        />
-        <input
-          value={inputFields.email}
-          name="email"
-          onChange={handleInputChange}
-          type="email"
-          placeholder="email"
-        />
-        <input
-          value={inputFields.message}
-          name="message"
-          onChange={handleInputChange}
-          type="text"
-          placeholder="message"
-        />
-        <div>
-          <p>{errorMessage}</p>
-        </div>
-        <button type="button" onClick={handleFormSubmit}>
-          Submit
-        </button>
-      </form>
+      <Container>
+        <form className="form">
+          <input
+            value={inputFields.name}
+            className="form-control mb-3"
+            name="name"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="name"
+          />
+          <input
+            value={inputFields.email}
+            className="form-control mb-3"
+            name="email"
+            onChange={handleInputChange}
+            type="email"
+            placeholder="email"
+          />
+          <input
+            value={inputFields.message}
+            className="form-control mb-3"
+            name="message"
+            onChange={handleInputChange}
+            type="text"
+            placeholder="message"
+          />
+          <div>
+            <p>{errorMessage}</p>
+          </div>
+          <button className="btn btn-dark" type="button" onClick={handleFormSubmit}>
+            Submit
+          </button>
+        </form>
+      </Container>
     </div>
   );
 }

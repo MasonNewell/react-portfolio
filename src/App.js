@@ -1,5 +1,6 @@
 import "./App.css";
 import Navigation from "./components/Nav";
+import Footer from "./components/Footer";
 import Form from "./components/Form";
 import Hero from "./components/Hero";
 import Home from "./pages/Home";
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />}></Route>
           <Route path="/portfolio" element={<Portfolio />}></Route>
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

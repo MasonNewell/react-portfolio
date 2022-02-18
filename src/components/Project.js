@@ -7,7 +7,7 @@ import workoutTracker from "../images/Projects/workoutTracker.png";
 function Project() {
   return (
     <Container>
-      <Row className="align-items-stretch">
+      <Row>
         {/* RoomFinder */}
         <Col xs={12} md={6} className="p-4">
           <Card className="bg-dark text-white">
