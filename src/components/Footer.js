@@ -3,7 +3,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div>
+    <div className="fixed-bottom">
       <a href="https://github.com/MasonNewell" target="_blank">
         <FaGithub
           size="2.5rem"
