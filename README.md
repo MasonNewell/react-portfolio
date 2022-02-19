@@ -8,4 +8,4 @@ https://pedantic-bell-0121e4.netlify.app/
 
 # Sceenshot
 
-![Screenshot](./images/Demo.png)
+![Screenshot](./src/images/Demo.png)
