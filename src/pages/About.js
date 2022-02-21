@@ -25,9 +25,7 @@ export default function About() {
             <li className="list-group-item">API's</li>
             <li className="list-group-item">jQuery</li>
             <li className="list-group-item">MySQL with Sequelize</li>
-            <li className="list-group-item" li className="list-group-item">
-              NoSQL with MongoDB/Mongoose
-            </li>
+            <li className="list-group-item">NoSQL with MongoDB/Mongoose</li>
             <li className="list-group-item">IndexedDB</li>
             <li className="list-group-item">GraphQL</li>
             <li className="list-group-item">Handlebars</li>
